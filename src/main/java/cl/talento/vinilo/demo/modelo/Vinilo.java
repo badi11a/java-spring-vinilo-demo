@@ -8,13 +8,13 @@ public class Vinilo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_vinilo")
+    @Column(name = "id_vinilo") //<--asi esta en la base de datos
     private Integer idVinilo;
 
     private String titulo;
     private String artista;
     
-    @Column(name = "anio_lanzamiento")
+    @Column(name = "anio_lanzamiento")//<-- asi en la BD
     private Integer anioLanzamiento;
     
     private String genero;
@@ -22,7 +22,6 @@ public class Vinilo {
 
     public Vinilo() {}
 
-    // Getters y Setters
     public Integer getIdVinilo() { return idVinilo; }
     public void setIdVinilo(Integer idVinilo) { this.idVinilo = idVinilo; }
 

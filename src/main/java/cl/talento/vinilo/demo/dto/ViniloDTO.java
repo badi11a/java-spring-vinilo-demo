@@ -8,7 +8,6 @@ public class ViniloDTO {
     private String genero;
     private Boolean disponible;
 
-    // Constructor con todos los parámetros para facilitar el mapeo
     public ViniloDTO(Integer idVinilo, String titulo, String artista, Integer anioLanzamiento, String genero, Boolean disponible) {
         this.idVinilo = idVinilo;
         this.titulo = titulo;
@@ -18,11 +17,11 @@ public class ViniloDTO {
         this.disponible = disponible;
     }
 
-    // Getters para que Thymeleaf pueda leer los datos
     public Integer getIdVinilo() { return idVinilo; }
     public String getTitulo() { return titulo; }
     public String getArtista() { return artista; }
     public Integer getAnioLanzamiento() { return anioLanzamiento; }
     public String getGenero() { return genero; }
     public Boolean getDisponible() { return disponible; }
+    //TODO agregar setters
 }

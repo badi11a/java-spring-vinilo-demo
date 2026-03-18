@@ -18,7 +18,6 @@ public class ViniloController {
 
     @GetMapping
     public String listar(Model model) {
-        // Le pedimos los DTOs al servicio y los pasamos a la vista
         model.addAttribute("vinilos", viniloService.obtenerTodosLosVinilos());
         return "vinilos"; 
     }
