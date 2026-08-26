@@ -23,5 +23,4 @@ public class ViniloDTO {
     public Integer getAnioLanzamiento() { return anioLanzamiento; }
     public String getGenero() { return genero; }
     public Boolean getDisponible() { return disponible; }
-    //TODO agregar setters
 }
