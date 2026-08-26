@@ -17,6 +17,7 @@ Además de las capas, el proyecto usa un **DTO (Data Transfer Object)**: no es u
 
 * **Java 25**
 * **Spring Boot 4.x**
+* **Spring Web MVC** (Controladores y ruteo HTTP)
 * **Spring Data JPA**
 * **Thymeleaf** (Motor de plantillas)
 * **MariaDB** (Base de datos)
@@ -28,9 +29,19 @@ Además de las capas, el proyecto usa un **DTO (Data Transfer Object)**: no es u
 2. Configurar las credenciales en `src/main/resources/application.properties`.
 3. La propiedad `spring.jpa.hibernate.ddl-auto=update` está activa para generar la tabla automáticamente al inicio.
 
-> ⚠️ **Nota educativa:** las credenciales en `application.properties` están en texto plano (`root/123456`) solo para simplificar el ejemplo. En una aplicación real nunca se comitean credenciales: se externalizan con variables de entorno o un `application-local.properties` ignorado por Git.
+> ⚠️ **Nota educativa:** `spring.datasource.username` y `spring.datasource.password` se dejan vacíos a propósito en el repositorio — cada quien debe completarlos localmente con sus propias credenciales de MariaDB. En una aplicación real ni siquiera conviene dejar esas claves en un archivo versionado: se externalizan con variables de entorno o un `application-local.properties` ignorado por Git.
 >
 > El test `ViniloAppTests` (`contextLoads`) levanta el contexto completo de Spring, por lo que **necesita la instancia de MariaDB corriendo** para pasar; no es un test aislado con base de datos en memoria.
+
+## ▶️ Ejecución
+
+```bash
+./mvnw spring-boot:run
+```
+
+Con la app corriendo (puerto por defecto `8080`), el único endpoint disponible es:
+
+* `GET http://localhost:8080/vinilos` — Renderiza la vista Thymeleaf con el catálogo de vinilos (tabla obtenida vía `ViniloController` → `ViniloService` → `ViniloRepository`).
 
 ## 🛣️ Próximos Pasos
 
